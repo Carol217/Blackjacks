@@ -15,6 +15,18 @@ public class QQKachoo<D> implements Deque<D>{
  	 return false;
 	}
 	
+	public String toString()
+	{
+		String retStr = "";
+		DLLNode<D> iter = _front;
+		while (iter != null)
+		{
+			retStr += iter.getCargo() + " ";
+			iter = iter.getNext();
+		}
+		return retStr;
+	}
+	
 	public void addFirst(D e)
 	{
 		if (_front == null)
@@ -45,6 +57,7 @@ public class QQKachoo<D> implements Deque<D>{
 		{
 			DLLNode<D> tmp = new DLLNode(e, null);
 			_end.setNext(tmp);
+			tmp.setPrev(_end);
 			_end = tmp;
 		}
 	}
@@ -82,5 +95,25 @@ public class QQKachoo<D> implements Deque<D>{
 		}
 		return null;
     }//O(1)
-
+	
+	public static void main(String[] args)
+	{
+		
+		QQKachoo<String> ernie = new QQKachoo();
+		ernie.addFirst("bert");
+		ernie.addFirst("elmo");
+		ernie.addLast("big bird");
+		ernie.addLast("oscar the grouch");
+		ernie.addFirst("dorothy");
+		System.out.println(ernie); //expected: dorothy, elmo, bert, big bird, oscar the grouch
+		ernie.removeFirst();
+		System.out.println(ernie); //expected: elmo, bert, big bird, oscar the grouch
+		ernie.removeLast();
+		System.out.println(ernie); //expected: elmo, bert, big bird
+		System.out.println(ernie.peekFirst());//expected: elmo
+		System.out.println(ernie.peekLast());//expected: big bird
+		//System.out.println();
+		/********Test me!********
+		**********w00t**********/
+	}
 }
