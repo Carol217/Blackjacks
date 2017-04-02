@@ -6,7 +6,7 @@ public class QQKachoo<D> implements Deque<D>{
            _front=null;
            _end=null;
            }
-		   
+
     public boolean isEmpty()
 	{
 	  if (_front==_end){
@@ -14,19 +14,20 @@ public class QQKachoo<D> implements Deque<D>{
   	  }
  	 return false;
 	}
-	
+
 	public String toString()
 	{
 		String retStr = "";
 		DLLNode<D> iter = _front;
 		while (iter != null)
 		{
-			retStr += iter.getCargo() + " ";
+      if (iter.getCargo() != null)
+			   retStr += iter.getCargo() + " ";
 			iter = iter.getNext();
 		}
 		return retStr;
 	}
-	
+
 	public void addFirst(D e)
 	{
 		if (_front == null)
@@ -43,7 +44,7 @@ public class QQKachoo<D> implements Deque<D>{
 			_front = tmp;
 		}
 	}
-	
+
 	public void addLast(D e)
 	{
 		if (_front == null)
@@ -61,7 +62,7 @@ public class QQKachoo<D> implements Deque<D>{
 			_end = tmp;
 		}
 	}
-	
+
 	public D removeFirst()
 	{
 		D tmp = (D)_front;
@@ -72,48 +73,43 @@ public class QQKachoo<D> implements Deque<D>{
 
     public D removeLast()
 	{
-		D tmp = (D)_end;
-		_end = _end.getPrev();
-		_end.setNext(null);
-		return tmp;
+		D temp = (D)_end;
+	  _end.setCargo(null);
+    return temp;
 	}
 
-    public D peekFirst() 
+    public D peekFirst()
     {
 		if (!isEmpty())
 		{
-			return (D) _front;
+			return (D) _front.toString();
 		}
 		return null;
     }//O(1)
 
-	public D peekLast() 
+	public D peekLast()
     {
 		if (!isEmpty())
 		{
-			return (D) _end;
+			return (D) _end.getPrev().toString();
 		}
 		return null;
     }//O(1)
-	
+
 	public static void main(String[] args)
 	{
-		
+
 		QQKachoo<String> ernie = new QQKachoo();
 		ernie.addFirst("bert");
 		ernie.addFirst("elmo");
 		ernie.addLast("big bird");
 		ernie.addLast("oscar the grouch");
-		ernie.addFirst("dorothy");
-		System.out.println(ernie); //expected: dorothy, elmo, bert, big bird, oscar the grouch
+		System.out.println(ernie); //expected:  elmo, bert, big bird, oscar the grouch
 		ernie.removeFirst();
-		System.out.println(ernie); //expected: elmo, bert, big bird, oscar the grouch
+		System.out.println(ernie); //expected: bert, big bird, oscar the grouch
 		ernie.removeLast();
-		System.out.println(ernie); //expected: elmo, bert, big bird
-		System.out.println(ernie.peekFirst());//expected: elmo
+		System.out.println(ernie); //expected: bert, big bird
+		System.out.println(ernie.peekFirst());//expected: bert
 		System.out.println(ernie.peekLast());//expected: big bird
-		//System.out.println();
-		/********Test me!********
-		**********w00t**********/
 	}
 }

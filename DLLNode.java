@@ -1,5 +1,5 @@
 /*
-Jennifer Yu 
+Team Blackjacks
 APCS2 Period 5
 */
 /*****************************************************
@@ -15,7 +15,7 @@ public class DLLNode<T>
     private DLLNode _prevNode; //pointer to previous DLLNode
 
     // constructor -- initializes instance vars
-    public DLLNode( T value, DLLNode next ) 
+    public DLLNode( T value, DLLNode next )
     {
 	_cargo = value;
 	_nextNode = next;
@@ -32,14 +32,14 @@ public class DLLNode<T>
 
 
     //--------------v  MUTATORS  v--------------
-    public T setCargo( T newCargo ) 
+    public T setCargo( T newCargo )
     {
 	T temp = _cargo;
 	_cargo = newCargo;
 	return temp;
     }
 
-    public DLLNode setNext( DLLNode newNext ) 
+    public DLLNode setNext( DLLNode newNext )
     {
 	DLLNode temp = _nextNode;
 	newNext.setPrev(this);
@@ -61,10 +61,10 @@ public class DLLNode<T>
 
 
     //main method for testing
-    public static void main( String[] args ) 
+    public static void main( String[] args )
 	{
 
-	
+
 	//Below is an exercise in creating a linked list...
 
 	//Create a node
@@ -75,7 +75,7 @@ public class DLLNode<T>
 
 	//Create a third node after the second
 	first.getNext().setNext( new DLLNode( "know", null ) );
-	/*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y) 
+	/*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 	//A naive list traversal:
@@ -83,7 +83,7 @@ public class DLLNode<T>
 	    System.out.println( "Before: "+ first.getPrev() + " Now: " + first );
 	    first = first.getNext();
 	}
-	
+
 	System.out.println(first);
 
 	}//end main

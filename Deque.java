@@ -1,6 +1,6 @@
-public interface Deque<Koenig> 
+public interface Deque<Koenig>
 {
-	
+
     public void addFirst(Koenig e);
 
     public void addLast(Koenig e);
