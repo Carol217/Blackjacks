@@ -6,5 +6,8 @@
 4. Koenig removeLast()
 5. Koenig peekFirst()
 6. Koenig peekLast()
-
-We chose to use Nodes because they would prove more useful and efficient to add and remove items.  Being more comfortable with front and end pointers than using Array Lists we decided to use LLNode.  Lastly, we had already created a number of similar methods using Nodes more recently than ArrayLists so this allowed us to utilise them.
+<br> <br> 
+**Rationale for Method Selections** <br> 
+<br> 
+**Why an DLLNode based architecture?** <br> 
+<br> 
