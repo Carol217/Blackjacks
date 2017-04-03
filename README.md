@@ -7,8 +7,9 @@
 5. Koenig peekFirst()
 6. Koenig peekLast()
 
-<br> <br> 
+<br> 
 **Rationale for Method Selections** <br> 
+These methods are the most crucial in order to implement 
 <br> 
 **Why an DLLNode based architecture?** <br> 
 <br> 
