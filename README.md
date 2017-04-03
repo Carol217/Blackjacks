@@ -6,6 +6,7 @@
 4. Koenig removeLast()
 5. Koenig peekFirst()
 6. Koenig peekLast()
+
 <br> <br> 
 **Rationale for Method Selections** <br> 
 <br> 
