@@ -35,6 +35,6 @@ We utilized a DLLNode based architecture for several reasons.
   - In other structures, one would have to discover/maintain a specific index in order to access things from the other end (depending on which end is the "front"). 
 
 **rOBustIFIEd**
-- Added ```isEmpty()``` method to function that remove elements within the Deque. This was done so that in the case where the user would try to remove from an empty Deque, then the function would not display an error, but return null. (Suggested by JDK)
+- Added ```isEmpty()``` method to functions that remove elements within the Deque. This was done so that in the case where the user would try to remove from an empty Deque, then the function would not display an error, but return null. (Suggested by JDK)
 - Made the last paragraph more readable with bullet points. (Suggested by Only Duo)
 - Added the runtime for all functions. (Suggested by AllCamerasOnDeque)
