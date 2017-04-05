@@ -73,6 +73,10 @@ public class QQKachoo<D> implements Deque<D>{
     }
     
     //removes the first item of the deque
+    /** For Both remove methods: 
+	Make a base case for empty deques using isEmpty() to throw an exception or return null
+     **/
+
     public D removeFirst()
     {
 	D tmp = (D)_front;
