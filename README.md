@@ -2,6 +2,7 @@
 ### Jen Yu, Brooke Jin, Federico Tondolo
 ### Period 5 APCS2, Mr. Brown Mykolyk
 **UPDATED WITH DOCUMENTATION OF IMPROVEMENTS IN IMPLEMENTATION OF DEQUE INTERFACE**
+
 **Interface Methods**
 1. void addFirst(Koenig item)
 2. void addLast(Koenig item)
