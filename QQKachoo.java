@@ -21,7 +21,7 @@ public class QQKachoo<D> implements Deque<D>{
 	return false;
     }
 
-    //returns the deque in a string 
+    //returns the deque in a string
     public String toString()
     {
 	String retStr = "";
@@ -71,14 +71,16 @@ public class QQKachoo<D> implements Deque<D>{
 		_end = tmp;
 	    }
     }
-    
+
     //removes the first item of the deque
-    /** For Both remove methods: 
+    /** For Both remove methods:
 	Make a base case for empty deques using isEmpty() to throw an exception or return null
      **/
 
     public D removeFirst()
     {
+      if (isEmpty())
+        return null;
 	D tmp = (D)_front;
 	_front = _front.getNext();
 	_front.setPrev(null);
@@ -88,6 +90,8 @@ public class QQKachoo<D> implements Deque<D>{
     //removes the last item of the deque
     public D removeLast()
     {
+      if (isEmpty())
+        return null;
 	D temp = (D)_end;
 	_end.setCargo(null);
 	return temp;
