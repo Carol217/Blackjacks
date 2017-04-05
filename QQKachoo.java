@@ -19,7 +19,7 @@ public class QQKachoo<D> implements Deque<D>{
 	    return true;
 	}
 	return false;
-    }
+    }//O(1)
 
     //returns the deque in a string
     public String toString()
@@ -33,7 +33,7 @@ public class QQKachoo<D> implements Deque<D>{
 		iter = iter.getNext();
 	    }
 	return retStr;
-    }
+    }//O(n)
 
     //adds an object to the front of the deque
     public void addFirst(D e)
@@ -51,7 +51,7 @@ public class QQKachoo<D> implements Deque<D>{
 		_front.setPrev(tmp);
 		_front = tmp;
 	    }
-    }
+    }//O(1)
 
     //adds an object to the end of the deque
     public void addLast(D e)
@@ -70,7 +70,7 @@ public class QQKachoo<D> implements Deque<D>{
 		tmp.setPrev(_end);
 		_end = tmp;
 	    }
-    }
+    }//O(1)
 
     //removes the first item of the deque
     /** For Both remove methods:
@@ -80,22 +80,26 @@ public class QQKachoo<D> implements Deque<D>{
     public D removeFirst()
     {
       if (isEmpty())
-        return null;
+	  {
+	      return null;
+	  }
 	D tmp = (D)_front;
 	_front = _front.getNext();
 	_front.setPrev(null);
 	return tmp;
-    }
+    }//O(1)
 
     //removes the last item of the deque
     public D removeLast()
     {
       if (isEmpty())
-        return null;
+	  {
+	      return null;
+	  }
 	D temp = (D)_end;
 	_end.setCargo(null);
 	return temp;
-    }
+    }//O(1)
 
     //returns the first item of the deque without removing it
     public D peekFirst()
